@@ -28,6 +28,7 @@ def train_model():
     joblib.dump(LR, model_path)
     
     print("Model trained and save successfully")
+    return acc
     
 if __name__=="__main__":
     train_model()

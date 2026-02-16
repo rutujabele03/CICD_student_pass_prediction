@@ -1,6 +1,6 @@
 import os
 import joblib
-from src.train import train_model,acc
+from src.train import train_model
 
 def test_model_training():
     
@@ -12,4 +12,5 @@ def test_model_training():
     model = joblib.load(model_path)
     
     assert hasattr(model, "predict"), "Model does not have predict method"
-    assert acc > 0.80, "Accuracy is less than 80! Failing pipeline"
+    accuracy = train_model()
+    assert accuracy>=0.80, "Accuracy below 0.8! Pipeline fails"
